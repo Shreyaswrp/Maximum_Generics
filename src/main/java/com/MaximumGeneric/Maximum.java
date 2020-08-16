@@ -7,12 +7,15 @@ public class Maximum<E extends Comparable> {
         this.inputArray = inputArray;
     }
 
-    public E getMax(E[] inputArray) {
+    public void getMax(E[] inputArray) {
         E max = inputArray[0];
         for ( int i = 1; i < inputArray.length; i++ )
             if ( inputArray[i].compareTo(max) > 0 )
                 max = inputArray[i];
-        return max;
+        printMax(max);
+    }
+    public void printMax(E max){
+        System.out.println("The max value is: "+max);
     }
 
     public static void main(String[] args) {
@@ -20,8 +23,8 @@ public class Maximum<E extends Comparable> {
         Float[] floatsArray={1.1f,2.2f,3.3f,4.4f};
         String[] stringsArray={"apple","banana","orange","mango"};
 
-        Comparable maxInt = new Maximum(intArray).getMax(intArray);
-        Comparable maxFloat = new Maximum(floatsArray).getMax(floatsArray);
-        Comparable maxString = new Maximum(stringsArray).getMax(stringsArray);
+         new Maximum(intArray).getMax(intArray);
+         new Maximum(floatsArray).getMax(floatsArray);
+         new Maximum(stringsArray).getMax(stringsArray);
     }
 }
